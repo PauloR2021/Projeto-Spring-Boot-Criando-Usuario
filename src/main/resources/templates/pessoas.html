@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cadastro de Pessoas</title>
+</head>
+<body class="container mt-4">
+
+<h1>Cadastro de Pessoas</h1>
+
+<form th:action="@{/pessoas}" th:object="${pessoa}" method="post" class="mb-4">
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" th:field="*{nome}" id="nome" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="idade" class="form-label">Idade</label>
+        <input type="number" th:field="*{idade}" id="idade" class="form-control" min="0" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+
+<h2>Pessoas cadastradas</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="pessoa : ${pessoas}">
+            <td th:text="${pessoa.nome}">Nome</td>
+            <td th:text="${pessoa.idade}">Idade</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
