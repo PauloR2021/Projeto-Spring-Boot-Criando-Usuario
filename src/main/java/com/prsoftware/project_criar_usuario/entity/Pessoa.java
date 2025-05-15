@@ -18,6 +18,10 @@ public class Pessoa {
     private String sobrenome;
     private String cpf;
     private Integer idade;
+
+
+    public Pessoa() {}
+
     public Long getId() {
         return id;
     }
