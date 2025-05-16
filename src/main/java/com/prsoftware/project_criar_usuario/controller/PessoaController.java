@@ -19,6 +19,15 @@ public class PessoaController {
     @Autowired
     private PessoaService pessoaService;
 
+
+
+    //Criando Rota para a tela de Index do Site
+
+    @GetMapping("/")
+    public String home(){
+        return "index";  
+    }
+
     //Criando a API para listar as Pessoas Criadas
     @GetMapping("/pessoas")
     public String listarPessoas(Model model) {
