@@ -7,11 +7,23 @@
 </head>
 <body>
     <header>
-        <button><a th:href="@{/}">Início</a></button>
-        <button><a th:href="@{/pessoas}">Cadastrar Pessoas</a></button>
-        <button><a th:href="@{/consultar}">Consultar Pessoas</a></button>
-        <button><a th:href="@{/editar}">Editar Pessoas</a></button>
-        <button><a th:href="@{/excluir}">Excluir Pessoas</a></button>
+        <div class="botoes">
+            <a th:href="@{/}">Início</a>
+            <a th:href="@{/pessoas}">Cadastrar Pessoas</a>
+            <a th:href="@{/consultar}">Consultar Pessoas</a>
+            <a th:href="@{/editar}">Editar Pessoas</a>
+            <a th:href="@{/excluir}">Excluir Pessoas</a>
+        </div>
+        
     </header>
+    <main class="main">
+        <p>Projeto desenvolvido em Java com Spring Boot.</p>
+        <p>O projeto tem como ídeia a criação de um sistema de registro de pessoas, utilizando os metodos de API Rest com Spring.</p>
+        <p>Trazendo os métodos HTTP (GET,POST,PUT e DELETE), assim tendo a implementação de uma API completa.</p>
+        <p>A aplicação também tem a conexão com o MySql aonde vai ser salvo os registro e aonde a API vai ter sua integração com os métodos CRUD</p>
+        <p>O desenvolvimento da Web Aplicação é criar a API tanto para a utilização do modo em Back End sem inteface gráfica para a registrar as pessoas,
+            tanto utilizando o Front End com a interface gráfica para o usuário.
+        </p>
+    </main>
 </body>
 </html>
