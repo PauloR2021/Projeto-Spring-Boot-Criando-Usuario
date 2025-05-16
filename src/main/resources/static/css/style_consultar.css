@@ -68,3 +68,26 @@ Parte de Mostar os Dados ao Usuário
   text-decoration: none;
   font-weight: bold;
 }
+
+/*
+Parte dos botões laterais que acompanham cada pessoa listada
+
+*/
+
+.botao-editar,
+.botao-excluir {
+    margin-left: 1rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.botao-editar {
+    background-color: #3498db;
+}
+
+.botao-excluir {
+    background-color: #e74c3c;
+}

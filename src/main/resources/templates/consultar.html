@@ -11,8 +11,6 @@
             <a th:href="@{/}">Início</a>
             <a th:href="@{/pessoas}">Cadastrar Pessoas</a>
             <a th:href="@{/consultar}">Consultar Pessoas</a>
-            <a th:href="@{/editar}">Editar Pessoas</a>
-            <a th:href="@{/excluir}">Excluir Pessoas</a>
         </div>
         
     </header>
@@ -25,6 +23,11 @@
             <span th:text="${p.sobrenome}">Sobrenome</span> |
             <span th:text="${p.cpf}">CPF</span> |
             <span th:text="${p.idade}">Idade</span>
+
+            <!-- Botões -->
+            <a th:href="@{'/editar/' + ${p.id}}" class="botao-editar">Editar</a>
+            <a th:href="@{'/excluir/' + ${p.id}}" class="botao-excluir" 
+                onclick="return confirm('Tem certeza que deseja excluir esta pessoa?');">Excluir</a>
         </li>
     </ul>
 
