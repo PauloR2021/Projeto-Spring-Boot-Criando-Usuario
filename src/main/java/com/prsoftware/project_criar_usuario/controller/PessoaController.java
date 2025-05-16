@@ -8,6 +8,7 @@ import com.prsoftware.project_criar_usuario.service.PessoaService;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
@@ -37,7 +38,6 @@ public class PessoaController {
         return "redirect:/pessoas";
     }
    
-
     //Criando a API para listar as Pessoas Criadas
     @GetMapping("/consultar")
     public String listarPessoas(Model model) {
@@ -45,6 +45,30 @@ public class PessoaController {
         return "consultar";
     }
 
+    // Mostrar formulário para editar pessoa
+    @GetMapping("/editar/{id}")
+    public String editarPessoa(@PathVariable Long id, Model model) {
+        Pessoa pessoa = pessoaService.findById(id);
+        if (pessoa == null) {
+            return "redirect:/consultar"; // se pessoa não existir, redireciona
+        }
+        model.addAttribute("pessoa", pessoa);
+        return "alterar"; // página para editar pessoa (formulário)
+    }
+
+    // Receber o POST do formulário de edição para atualizar pessoa
+    @PostMapping("/editar")
+    public String atualizarPessoa(@ModelAttribute Pessoa pessoa) {
+        pessoaService.save(pessoa); // save atualiza se já existir id
+        return "redirect:/consultar";
+    }
+
+    // Excluir pessoa pelo id
+    @GetMapping("/excluir/{id}")
+    public String excluirPessoa(@PathVariable Long id) {
+        pessoaService.deleteById(id);
+        return "redirect:/consultar";
+    }
     
     
 
