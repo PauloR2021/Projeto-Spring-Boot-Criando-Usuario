@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Pessoas</title>
+    <link rel="stylesheet" th:href="@{/css/style_consultar.css}">
+</head>
+<body>
+    <header>
+        <div class="botoes">
+            <a th:href="@{/}">Início</a>
+            <a th:href="@{/pessoas}">Cadastrar Pessoas</a>
+            <a th:href="@{/consultar}">Consultar Pessoas</a>
+            <a th:href="@{/editar}">Editar Pessoas</a>
+            <a th:href="@{/excluir}">Excluir Pessoas</a>
+        </div>
+        
+    </header>
+
+    <h2>Lista de Pessoas Cadastradas:</h2>
+
+    <ul class="lista-pessoas">
+        <li th:each="p : ${pessoas}">
+            <strong th:text="${p.nome}">Nome</strong> -
+            <span th:text="${p.sobrenome}">Sobrenome</span> |
+            <span th:text="${p.cpf}">CPF</span> |
+            <span th:text="${p.idade}">Idade</span>
+        </li>
+    </ul>
+
+    <a href="/" class="voltar">Voltar</a>
+
+</body>
+</html>
