@@ -19,8 +19,6 @@ public class PessoaController {
     @Autowired
     private PessoaService pessoaService;
 
-
-
     //Criando Rota para a tela de Index do Site
 
     @GetMapping("/")
