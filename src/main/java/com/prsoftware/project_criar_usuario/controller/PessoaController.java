@@ -18,28 +18,34 @@ public class PessoaController {
     //Intanciando a Classe Service aonde está a Regra de Negocio do Projeto
     @Autowired
     private PessoaService pessoaService;
-
     //Criando Rota para a tela de Index do Site
-
     @GetMapping("/")
     public String home(){
         return "index";  
     }
 
-    //Criando a API para listar as Pessoas Criadas
+    //O metodo Mostrar Formualario com o Anotação @GetMapping precisa estar na Frente para Funcionar o Campos de Formulario
     @GetMapping("/pessoas")
-    public String listarPessoas(Model model) {
-        model.addAttribute("pessoas", pessoaService.findAll());
+    public String formulario(Model model) {
         model.addAttribute("pessoa", new Pessoa());
-        return "pessoas";
+        return "pessoas"; // formulário de cadastro
     }
-
     //Criando a API para Salvar Pessoas sem ter interface gráfica
     @PostMapping("/pessoas")
     public String salvarPessoa(@ModelAttribute Pessoa pessoa){
         pessoaService.save(pessoa);
         return "redirect:/pessoas";
     }
+   
+
+    //Criando a API para listar as Pessoas Criadas
+    @GetMapping("/consultar")
+    public String listarPessoas(Model model) {
+        model.addAttribute("pessoas", pessoaService.findAll());
+        return "consultar";
+    }
+
+    
     
 
 }
