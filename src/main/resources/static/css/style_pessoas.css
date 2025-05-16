@@ -5,7 +5,7 @@ body {
 
 header {
 
-    /*space-between*/
+  /*space-between*/
   background-color: #333;
   color: white;
   padding: 1rem;
@@ -34,4 +34,73 @@ header .botoes a {
   border-radius: 5px;
   transition: background-color 0.3s ease;
   font-size: 1rem;
+}
+
+/*
+Alterando o Formulário com as ideias:
+
+Formulário centralizado
+Campos com padding, bordas arredondadas
+Botão estilizado com hover
+Responsivo e com foco visual agradável
+
+*/
+/* Título */
+.titulo {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button[type="submit"] {
+  margin-top: 1.5rem;
+  padding: 0.7rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
 }
