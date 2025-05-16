@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/css/style_index.css}">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastar Pessoas</title>
 </head>
 <body>
-    
+    <header>
+        <button><a th:href="@{/}">Início</a></button>
+        <button><a th:href="@{/pessoas}">Cadastrar Pessoas</a></button>
+        <button><a th:href="@{/consultar}">Consultar Pessoas</a></button>
+        <button><a th:href="@{/editar}">Editar Pessoas</a></button>
+        <button><a th:href="@{/excluir}">Excluir Pessoas</a></button>
+    </header>
 </body>
 </html>
