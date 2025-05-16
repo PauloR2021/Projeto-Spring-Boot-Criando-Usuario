@@ -25,4 +25,15 @@ public class PessoaService {
         return pessoaRepository.save(pessoa);
     }
 
+    // Buscar pessoa pelo id
+    public Pessoa findById(Long id) {
+        return pessoaRepository.findById(id).orElse(null); // retorna null se não encontrar
+    }
+
+    // Excluir pessoa pelo id
+    public void deleteById(Long id) {
+        pessoaRepository.deleteById(id);
+    }
+
+  
 }
